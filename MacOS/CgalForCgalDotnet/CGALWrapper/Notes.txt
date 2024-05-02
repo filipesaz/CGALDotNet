@@ -4,6 +4,12 @@ NOTE: any "Build Setting" that is common to both targets should be set in the pr
 
 Select "Customized" in target "Build Settings" to have a look at all config mods.
 
+
+__
+NOTE:
+You can check which architectures a given library is compatible with. ex: "file libmpfr.dylib"
+Reinstall any libraries with incompatible architetures. ex: "brew reinstall mpfr"
+
 __
 List of MODS made:
 
@@ -78,6 +84,14 @@ Unexpected type name 'Segment_2': expected expression
 by adding the "template" keyword.
 Ex: change CGAL::object_cast<K::Segment_2>(&o) to CGAL::object_cast<typename K::Segment_2>(&o)
 
+
+__
+#define CGALWRAPPER_API 
+instead of
+#define CGALWRAPPER_API __declspec(dllexport)
+
+See: https://github.com/Unity-Technologies/DesktopSamples/blob/master/SimplestPluginExample/PluginSource/Plugin.cpp
+See: https://stackoverflow.com/questions/8258319/gcc-arm-equivalent-to-declspecdllexport
 
 __
 add

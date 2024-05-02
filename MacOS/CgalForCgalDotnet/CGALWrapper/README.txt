@@ -20,11 +20,60 @@ brew --prefix mpfr
 brew --prefix eigen
 
 
+2) To create the dynamic-linked library, select the scheme with sufix "dynamic" not "dynamic debug". Either "Run" it or "Archive" it.
 
-2) Build the target with suffix "dynamic" to create the dynamic-linked library.
-Tap "Show in Finder" over the product in "Products" group, to view the output library file.
+2.1) Optionally, to the same for suffix "static " to create the static-linked library.
 
 
-2.1) Build the target with suffix "static " to create the static-linked library.
-Tap "Show in Finder" over the product in "Products" group, to view the output library file.
+--
+Optionally,
+You may need to configure "Architectures" in "Build Settings". Its default value is $(ARCHS_STANDARD).
+We have set it to arm64, for both our libgmp and libmpfr are only compatible with arm64, and we only need compatibility with arm64 for our M1 mac.
+
+
+You can check the architectures a given library supports (e.g: mpfr).
+   run: "file libmpfr.dylib" or "lipo -info libmpfr.dylib"
+You can extract one of the architectures.
+   run: "lipo -extract arm64 -output libmpfr_arm64.dylib libmpfr.dylib"
+Reinstall any libraries that don't support your architeture.
+   run: "brew reinstall mpfr"
+
+
+
+__
+TO USE THIS LIBRARY:
+(do the following outside this project)
+
+
+Modify class CGALGlobal of the project CGALDotNet:
+from
+private const string DLL_NAME = "CGALWrapper.dll";
+to
+public const string DLL_NAME = "CgalForCgalDotnet";
+
+
+note: You should not include the prefix "lib" of the library nor its file extension.
+See: https://docs.unity3d.com/Manual/PluginsForDesktop.html
+
+
+Modify class CGALObject of the project CGALDotNet:
+from
+protected const string DLL_NAME = "CGALWrapper.dll";
+to
+protected const string DLL_NAME = CGALGlobal.DLL_NAME;
+
+
+Modify class CGALObjectKernel of the project CGALDotNet:
+from
+protected const string DLL_NAME = "CGALWrapper.dll";
+to
+protected const string DLL_NAME = CGALGlobal.DLL_NAME;
+
+
+Modify class CGALIntersections of the project CGALDotNet:
+from
+public const string DLL_NAME = "CGALWrapper.dll";
+to
+public const string DLL_NAME = CGALGlobal.DLL_NAME;
+
 

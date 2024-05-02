@@ -1,6 +1,13 @@
 #pragma once
 
-#define CGALWRAPPER_API __declspec(dllexport)
+
+//#if defined(__MAC__)
+#define CGALWRAPPER_API // __attribute__((visibility("default")))
+// see: https://stackoverflow.com/questions/8258319/gcc-arm-equivalent-to-declspecdllexport
+
+// #if defined(__NT__)
+// #define CGALWRAPPER_API __declspec(dllexport)
+
 
 #define NULL_INDEX -1
 #define WIN32_LEAN_AND_MEAN 

@@ -16,7 +16,7 @@ void Polygon2_EEK_Release(void* ptr)
 
 int Polygon2_EEK_Count(void* ptr)
 {
-	auto polygon = Polygon2<EEK>::CastToPolygon2(ptr);
+	// auto polygon = Polygon2<EEK>::CastToPolygon2(ptr);
 	return Polygon2<EEK>::Count(ptr);
 }
 

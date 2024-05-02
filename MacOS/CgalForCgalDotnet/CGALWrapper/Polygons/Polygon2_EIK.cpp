@@ -16,7 +16,7 @@ void Polygon2_EIK_Release(void* ptr)
 
 int Polygon2_EIK_Count(void* ptr)
 {
-	auto polygon = Polygon2<EIK>::CastToPolygon2(ptr);
+	// auto polygon = Polygon2<EIK>::CastToPolygon2(ptr);
 	return Polygon2<EIK>::Count(ptr);
 }
 

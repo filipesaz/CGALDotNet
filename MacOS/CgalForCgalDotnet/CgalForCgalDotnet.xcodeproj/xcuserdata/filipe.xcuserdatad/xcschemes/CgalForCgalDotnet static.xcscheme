@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1430"
-   version = "1.7">
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D461966B2BDC42AB00608BE7"
-               BuildableName = "libCgalForCgalDotnet_static.a"
+               BuildableName = "libCgalForCgalDotnet.a"
                BlueprintName = "CgalForCgalDotnet_static"
                ReferencedContainer = "container:CgalForCgalDotnet.xcodeproj">
             </BuildableReference>
@@ -30,15 +30,22 @@
       shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      disableMainThreadChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
+      debugDocumentVersioning = "NO"
+      debugXPCServices = "NO"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      enableGPUValidationMode = "1"
+      allowLocationSimulation = "NO"
+      viewDebuggingEnabled = "No"
+      queueDebuggingEnabled = "No"
+      consoleMode = "1"
+      structuredConsoleMode = "3">
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -50,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D461966B2BDC42AB00608BE7"
-            BuildableName = "libCgalForCgalDotnet_static.a"
+            BuildableName = "libCgalForCgalDotnet.a"
             BlueprintName = "CgalForCgalDotnet_static"
             ReferencedContainer = "container:CgalForCgalDotnet.xcodeproj">
          </BuildableReference>
