@@ -494,6 +494,8 @@
 		D4BB78392BD8523F00F22FC0 = {
 			isa = PBXGroup;
 			children = (
+				D4BB88952BD85F2C00F22FC0 /* Notes.txt */,
+				D46196E22BDD1C7200608BE7 /* README.txt */,
 				D4BB78492BD8524900F22FC0 /* CGALWrapper */,
 				D4BB78432BD8523F00F22FC0 /* Products */,
 				D4BB88962BDA700600F22FC0 /* Frameworks */,
@@ -530,8 +532,6 @@
 				D4BB79382BD8524900F22FC0 /* Polyhedra */,
 				D4BB79502BD8524900F22FC0 /* Polylines */,
 				D4BB795B2BD8524900F22FC0 /* Utility */,
-				D4BB88952BD85F2C00F22FC0 /* Notes.txt */,
-				D46196E22BDD1C7200608BE7 /* README.txt */,
 			);
 			path = CGALWrapper;
 			sourceTree = "<group>";
